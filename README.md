@@ -54,7 +54,7 @@ GameComponent
 ├── Player                        (input handling, movement, collision resolution, scoring)
 ├── Enemy                         (pursuit AI)
 ├── Reward / Bonus / Punishment   (collectibles & hazards)
-├── Exit                          (win-condition check)
+├── Exit                          (win condition check)
 └── Barrier
     ├── Wall
     ├── Building1 / Building2 / Building3
@@ -96,7 +96,7 @@ This keeps collision logic generic while each subclass supplies only its own spr
             │   │       ├── Reward.java          # Money bill (+10)
             │   │       ├── Bonus.java           # Diamond (+20, timed)
             │   │       ├── Punishment.java      # Bomb (−20)
-            │   │       ├── Exit.java            # Win-condition check
+            │   │       ├── Exit.java            # Win condition check
             │   │       ├── ScoreUI.java         # Score model
             │   │       └── barrier/             # Barrier + Wall, Building1–3, Tree
             │   └── resources/
@@ -191,11 +191,11 @@ The implementation realizes this design, with gameplay values tuned during devel
 
 ## 🔮 Possible Improvements
 
-- Cache sprite `Image` objects at load time instead of constructing them per render call, to cut per-frame allocation.
+- Cache sprite `Image` objects at load time instead of constructing them per render call, to cut per frame allocation.
 - Upgrade enemy AI from greedy chase to **BFS/A\* pathfinding** so police can route around barriers instead of stalling against them.
 - Add a restart button on the win/lose screens, pause functionality, and sound effects.
-- Grid-snapped movement for tighter, Pac-Man-style controls.
-- Multiple maps / difficulty levels — the tile-map system already makes new levels a one-array change.
+- Grid snapped movement for tighter, Pac Man style controls.
+- Multiple maps / difficulty levels — the tile map system already makes new levels a one array change.
 
 ---
 
